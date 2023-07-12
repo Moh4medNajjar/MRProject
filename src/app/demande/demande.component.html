@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" mode="over" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+
+      <span>MRproject</span>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+    </mat-toolbar>
+    <div class="row my-2 mt-5">
+      <div class="col">
+        <div class="container table-responsive">
+          <div class="row ">
+            <div class="col-lg-8 offset-lg-2 d-flex justify-content-between">
+
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-5 col-xs-12 d-flex align-items-center">
+                    <h3 style="color:rgb(66, 1, 151);font-weight:bold; font-size:1.5rem">Mes Demandes <span style="background-color:rgba(65, 16, 118, 0.437); padding:0px 10px; border-radius:6px">4</span></h3>
+                  </div>
+                  <div class="col-lg-7 col-xs-12">
+                    <select class="form-select form-select-lg mb-3 custom-select" [(ngModel)]="selectedFilter">
+                      <option value="all">Toutes les demandes</option>
+                      <option value="nonTraitees">Demandes Non Traitées</option>
+                      <option value="traitees">Demandes Traitées</option>
+                    </select>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--******************************************************-->
+
+          <div class="scroll-container">
+            <div class="row " *ngFor="let item of filteredTableData" >
+              <div class="col-lg-8 offset-lg-2 d-flex justify-content-between">
+
+                <div class="container">
+                  <div class="row">
+                    <div class="card bigbox d-flex px-5 py-1 pt-2 align-items-center justify-content-between" style="flex-direction: row;">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-4 col-xs-12">
+                            <h4 style="margin-bottom:4px; color:rgb(66, 1, 151); font-weight:500">{{item.name}}</h4>
+                            <p style="color:grey; margin-bottom:4px">Date: {{item.date}}</p>
+                            <p style="color:grey">text</p>
+                          </div>
+
+                          <div class="col-md-4 offset-xl-4 offset-lg-2 offset-md-2 col-xs-12 d-flex align-items-center">
+                            <i [ngStyle]="{'color': item.traitee ? 'green' : 'goldenrod'}" class="fa-solid fa-circle" style="color:green"></i>
+                            <p style="color:grey; margin-top:10px; margin-left:10px; " class="par">Not Understandable text </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--******************************************************-->
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

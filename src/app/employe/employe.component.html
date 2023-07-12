@@ -1,0 +1,125 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" mode="over" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <span>MRproject</span>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+    </mat-toolbar>
+    <div class="container" >
+      <div class="row mt-5 mb-1">
+        <div class="col">
+            <div class="container">
+                <div class="row row1">
+                    <div class="col-lg-7 offset-lg-1 col-xs-12">
+                      <h3 class="fw-bold">Détails De l'Employé</h3>
+                        <div class="card " style="border-radius:16px; box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);">
+                          <mat-card style="border-radius:15px" class="pb-5">
+                            <mat-card-content style="border-radius:15px">
+                              <div class="top d-flex justify-content-between">
+                                <p class="fw-bold">Employé</p>
+                                <p class="fw-bold" style="color:blueviolet">Salaire</p>
+                              </div>
+                              <mat-divider class="mb-5"></mat-divider>
+                              <div class="top d-flex justify-content-between my-3">
+                                <p style="color:grey">Mohamed</p>
+                                <p style="font-weight:bold">0 MRU</p>
+                              </div>
+                              <div class="top d-flex justify-content-between my-3">
+                                <p style="color:grey">Mohamed</p>
+                                <p  style="font-weight:bold">1300.00,00 MRU</p>
+                              </div>
+                            </mat-card-content>
+                          </mat-card>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-xs-12 d-flex flex-column align-items-lg-start align-items-xs-center justify-content-between">
+                        <div class="div text-center mb-2">
+                          <div class="badge card-body text-center position-relative" style="border:2px solid rgb(112, 9, 247); background-color:#FFFFFF">
+
+                              <div class="image-container" style="padding:3px;background-color: rgb(112, 9, 247); border-radius:50% "><img class="card-img-top rounded-pill mx-auto" style="width:60px; height:60px" src="assets/emp9.jpg" alt="Card image cap"></div>
+                              <div class="card-body d-flex align-items-center justify-content-center my-4">
+                                <p class="card-text mt-3 fs-6" style=" font-weight:500;color:rgb(84, 5, 210)">Mohamed Najjar <br><span style="font-weight: 100;font-size:smaller; color:grey">Actif il y a 12 min</span></p>
+                              </div>
+
+                          </div>
+                        </div>
+
+                          <div class="card mt-1 itemc text-center"><mat-card-content><p>Software</p></mat-card-content></div>
+                          <div class=" card itemc text-center"><mat-card-content><p>UX/UI Desginer</p></mat-card-content></div>
+                          <div class="card itemc text-center"><mat-card-content><p>0123456789</p></mat-card-content></div>
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row my-2">
+      <div class="col">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+              <h3 class="fw-bold">Cotisation De L'entreprise</h3>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th style="white-space:nowrap">Nom de l'item</th>
+                      <th style="white-space:nowrap">Date de livraison</th>
+                      <th style="padding-right: 40px;">Status</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of tableData">
+                      <td></td>
+                      <td>{{item.item}}</td>
+                      <td>{{item.date}}</td>
+                      <td><span [ngClass]="getStyle(item.status)">{{item.status}}</span></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col offset-md-9 offset-xs-8">
+        <button class="mt-2 text-light" mat-raised-button (click)="openDialog()" style="background: linear-gradient(to right, #A3A2A7, #414449); width:180px; height:30px; border-radius:10px; margin-bottom:20px">
+          <i class="fa-regular fa-trash-can "></i> Archiver</button>
+
+        <!--********************************************************************************-->
+
+
+      </div>
+    </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

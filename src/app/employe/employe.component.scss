@@ -1,0 +1,170 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+
+.image-container {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image-container img {
+  display: block;
+  width: 60%;
+  height: auto;
+}
+
+
+
+.card {
+  position: relative;
+
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  border: 1px solid transparent;
+  border-radius:14px;
+}
+
+
+.box{
+  cursor:pointer;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom:9px;
+  height:45px
+}
+
+.badge{
+  height:120px;
+  border-radius: 10px;
+  border:2px solid blueviolet;
+  width:250px
+}
+@media screen and (min-width: 992px) {
+  .itemc{
+    width:250px
+  }
+}
+
+@media screen and (max-width: 297px) {
+  .badge{
+    height:120px;
+    border-radius: 10px;
+    width:200px
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .badge{
+    margin-top:36px;
+    height:120px;
+    border-radius: 10px;
+    width:220px
+  }
+  .itemc{
+    margin-bottom:8px
+  }
+}
+
+
+.itemc{
+  border-radius:8px;
+  font-weight:bold;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  cursor:pointer;
+}
+
+p{
+  font-size:smaller;
+}
+
+th{
+  color:rgb(179, 178, 178);
+  font-weight:500
+}
+
+span{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  height:30px;
+  width:100px;
+}
+
+.greenStyle{
+  background-color:#AAEADA;
+  color:#4BA992;
+  border: 1px solid #4BA992;
+  border-radius:6px
+}
+.redStyle{
+  background-color:#F5B9BA;
+  color:#AF5053;
+  border: 1px solid #AF5053;
+  border-radius:6px
+}
+
+
+
+
+
+th:nth-child(1), td:nth-child(1) {
+  width: 0;  /* Collapse the first column */
+}
+
+th:nth-child(2), td:nth-child(2) {
+  text-align: left;  /* Align the second column to the left */
+}
+
+th:nth-child(3), td:nth-child(3) {
+  text-align: center;  /* Align the third column to the center */
+}
+
+th:nth-child(4), td:nth-child(4) {
+  text-align: right;  /* Align the fourth column to the right */
+}
+
+th:nth-child(5), td:nth-child(5) {
+  width: 0;  /* Collapse the last column */
+}
+
+td:nth-child(4),
+th:nth-child(4) {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.table-responsive{
+  border-radius: 16px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+
